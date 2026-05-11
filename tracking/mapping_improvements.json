@@ -1,0 +1,84 @@
+{
+  "calendar page": {
+    "corrected_intent": "nav:calendar",
+    "category": "navigation commands"
+  },
+  "it coordinated": {
+    "corrected_intent": "nav:calendar",
+    "category": "navigation commands"
+  },
+  "today's schedule": {
+    "corrected_intent": "today_schedule",
+    "category": "calendar commands"
+  },
+  "today schedule": {
+    "corrected_intent": "today_schedule",
+    "category": "calendar commands"
+  },
+  "what is today's schedule": {
+    "corrected_intent": "today_schedule",
+    "category": "calendar commands"
+  },
+  "what's today's schedule": {
+    "corrected_intent": "today_schedule",
+    "category": "calendar commands"
+  },
+  "schedule": {
+    "corrected_intent": "today_schedule",
+    "category": "calendar commands"
+  },
+  "pending tasks": {
+    "corrected_intent": "list_tasks",
+    "category": "task commands"
+  },
+  "show pending masks": {
+    "corrected_intent": "list_tasks",
+    "category": "task commands"
+  },
+  "heartspace": {
+    "corrected_intent": "nav:dashboard",
+    "category": "navigation commands"
+  },
+  "open tasks page": {
+    "corrected_intent": "nav:tasks",
+    "category": "navigation commands"
+  },
+  "open notes page": {
+    "corrected_intent": "nav:notes",
+    "category": "navigation commands"
+  },
+  "open resources page": {
+    "corrected_intent": "nav:resources",
+    "category": "navigation commands"
+  },
+  "add a task": {
+    "corrected_intent": "add_task",
+    "category": "task commands"
+  },
+  "a task": {
+    "corrected_intent": "add_task",
+    "category": "task commands"
+  },
+  "take note": {
+    "corrected_intent": "add_note",
+    "category": "note commands"
+  },
+  "add resource": {
+    "corrected_intent": "add_resource",
+    "category": "navigation commands"
+  },
+  "remind me to": {
+    "corrected_intent": "add_task",
+    "category": "reminder commands"
+  },
+  "meeting": {
+    "corrected_intent": "nav:calendar",
+    "category": "meeting commands"
+  },
+  "tomorrow": {
+    "corrected_intent": "add_task_step_date",
+    "normalized_phrase": "set date tomorrow",
+    "confidence": 0.85,
+    "category": "task commands"
+  }
+}

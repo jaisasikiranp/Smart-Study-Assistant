@@ -1,0 +1,47 @@
+{
+  "total_failures": 46,
+  "unique_failed_phrases": 37,
+  "top_failures": [
+    [
+      "add a task",
+      4
+    ],
+    [
+      "what are the upcoming deadlines",
+      3
+    ],
+    [
+      "resource",
+      2
+    ],
+    [
+      "pending tasks",
+      2
+    ],
+    [
+      "schedule",
+      2
+    ],
+    [
+      "open",
+      2
+    ],
+    [
+      "radiat",
+      1
+    ],
+    [
+      "98 task",
+      1
+    ],
+    [
+      "cadet ask",
+      1
+    ],
+    [
+      "adidas",
+      1
+    ]
+  ],
+  "mapping_coverage": 18
+}

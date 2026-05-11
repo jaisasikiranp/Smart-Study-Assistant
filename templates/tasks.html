@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Goals | Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tasks.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='voice_assistant.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="display: flex;">
+    <aside class="sidebar">
+        <div class="logo">
+            <span style="font-size: 2rem;">🎓</span>
+            <div>
+                <p style="font-weight: 800; font-size: 1.25rem;">Study</p>
+                <p style="font-weight: 800; font-size: 1.25rem; margin-top: -0.25rem;">Assistant</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('dashboard.dashboard_view') }}"><span>⊞</span> Dashboard</a></li>
+            <li><a href="{{ url_for('tasks.list_tasks') }}" class="active"><span>📋</span> Tasks</a></li>
+            <li><a href="{{ url_for('notes.list_notes') }}"><span>🗒️</span> Notes</a></li>
+            <li><a href="{{ url_for('resources.list_resources') }}"><span>📚</span> Resources</a></li>
+            <li><a href="{{ url_for('courses.manager_view') }}"><span>📖</span> Courses</a></li>
+            <li><a href="{{ url_for('calendar.calendar_view') }}"><span>📅</span> Calendar</a></li>
+        </ul>
+        <div class="logout">
+            <a href="{{ url_for('auth.logout') }}" style="color: #94a3b8; font-weight: 600; text-decoration: none; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 1rem;"><span>🚪</span> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-dashboard">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <div>
+                <h1>Study Goals & Tasks</h1>
+                <p class="subtitle" style="text-align: left; margin-bottom: 0;">Stay on top of your learning schedule.</p>
+            </div>
+            <button onclick="document.getElementById('addTaskModal').style.display = 'flex'" class="btn" style="width: auto; padding: 0.75rem 1.5rem; margin-top:0;">+ New Goal</button>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" style="margin-bottom: 2rem;">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+            <a href="{{ url_for('tasks.list_tasks') }}" class="btn-sm {% if not filter %}btn-complete{% endif %}" style="text-decoration: none;"> All </a>
+            <a href="{{ url_for('tasks.pending_tasks') }}" class="btn-sm {% if show_all == False %}btn-complete{% endif %}" style="text-decoration: none;"> Pending Only </a>
+            <a href="{{ url_for('tasks.upcoming_tasks') }}" class="btn-sm {% if filter == 'upcoming' %}btn-complete{% endif %}" style="text-decoration: none;"> Upcoming Deadlines </a>
+        </div>
+
+        <section class="tasks-grid">
+            {% for task in tasks %}
+            {% set is_overdue = task.deadline and task.deadline < now and task.status == 'pending' %}
+            {% set is_urgent = task.deadline and task.deadline < now + timedelta(days=1) and task.status == 'pending' %}
+            <article class="task-card {% if is_overdue %}task-overdue{% elif is_urgent %}task-urgent{% endif %} {% if task.status == 'completed' %}task-completed{% endif %}">
+                <span class="status-badge status-{{ task.status }} {% if is_overdue %}status-overdue{% elif is_urgent %}status-urgent{% endif %}">
+                    {% if is_overdue %}Overdue{% else %}{{ task.status }}{% endif %}
+                </span>
+                <h3>📌 {{ task.title }}</h3>
+                <p>{{ task.description or "No additional details." }}</p>
+                <footer class="task-footer">
+                    <span class="deadline">
+                        📅 {{ task.deadline.strftime('%B %d, %H:%M') if task.deadline else "No deadline" }}
+                    </span>
+                    <div class="actions">
+                        {% if task.status == 'pending' %}
+                        <form action="{{ url_for('tasks.complete_task', id=task.id) }}" method="POST">
+                            <button type="submit" class="btn-sm btn-complete">Complete</button>
+                        </form>
+                        {% endif %}
+                        <form action="{{ url_for('tasks.delete_task', id=task.id) }}" method="POST">
+                            <button type="submit" class="btn-sm btn-delete" onclick="return confirm('Remove task?')">Delete</button>
+                        </form>
+                    </div>
+                </footer>
+            </article>
+            {% else %}
+            <div style="grid-column: 1/-1; text-align: center; padding: 4rem; background: rgba(255,255,255,0.05); border-radius: 1.5rem; color: var(--text-dim);">
+                <h2>Perfectly Planned!</h2>
+                <p>No study tasks found here. Take a break or add a new goal.</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <!-- Modal to Add Tasks -->
+    <div id="addTaskModal" class="modal-overlay">
+        <div class="modal-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+                <h2>Add Study Goal</h2>
+                <button onclick="document.getElementById('addTaskModal').style.display='none'" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.5rem;">&times;</button>
+            </header>
+            <form action="{{ url_for('tasks.add_task') }}" method="POST">
+                <div class="form-group">
+                    <label for="title">Goal Title</label>
+                    <input type="text" name="title" id="title" required placeholder="e.g., Mathematics Chapter 5">
+                </div>
+                <div class="form-group">
+                    <label for="description">Brief Description</label>
+                    <textarea name="description" id="description" rows="3"></textarea>
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <div class="form-group" style="flex: 1;">
+                        <label for="deadline_date">Deadline Date</label>
+                        <input type="date" name="deadline_date" id="deadline_date">
+                    </div>
+                    <div class="form-group" style="flex: 1;">
+                        <label for="deadline_time">Time</label>
+                        <input type="time" name="deadline_time" id="deadline_time">
+                    </div>
+                </div>
+                <button type="submit" class="btn">Start Studying</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='nav_highlighter.js') }}"></script>
+    <script src="{{ url_for('static', filename='notifications.js') }}"></script>
+    <script src="{{ url_for('static', filename='voice_assistant.js') }}"></script>
+</body>
+</html>

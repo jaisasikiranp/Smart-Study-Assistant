@@ -1,0 +1,110 @@
+{
+  "calendar page": {
+    "corrected_intent": "nav:calendar",
+    "normalized_phrase": "calendar page",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "calender page": {
+    "corrected_intent": "nav:calendar",
+    "normalized_phrase": "calender page",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "headlines": {
+    "corrected_intent": "upcoming_tasks",
+    "normalized_phrase": "headlines",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "radio task": {
+    "corrected_intent": "add_task",
+    "normalized_phrase": "radio task",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "pending tasks": {
+    "corrected_intent": "list_tasks",
+    "normalized_phrase": "pending tasks",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "analytics dashboard": {
+    "corrected_intent": "nav:dashboard",
+    "normalized_phrase": "analytics dashboard",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "resource": {
+    "corrected_intent": "list_resources",
+    "normalized_phrase": "resource",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "stop listening": {
+    "corrected_intent": "cancel",
+    "normalized_phrase": "stop listening",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "alexa a l e x a": {
+    "corrected_intent": "ignore",
+    "normalized_phrase": "alexa a l e x a",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "space": {
+    "corrected_intent": "ignore",
+    "normalized_phrase": "space",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "forces space": {
+    "corrected_intent": "ignore",
+    "normalized_phrase": "forces space",
+    "confidence": 0.95,
+    "category": "intent_mismatch"
+  },
+  "what are the upcoming deadlines": {
+    "corrected_intent": "upcoming_tasks",
+    "normalized_phrase": "what are the upcoming deadlines",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "today schedule": {
+    "corrected_intent": "today_schedule",
+    "normalized_phrase": "today schedule",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "what is today's schedule": {
+    "corrected_intent": "today_schedule",
+    "normalized_phrase": "what is today's schedule",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "what's today's schedule": {
+    "corrected_intent": "today_schedule",
+    "normalized_phrase": "what's today's schedule",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "schedule": {
+    "corrected_intent": "nav",
+    "normalized_phrase": "schedule",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "add a task": {
+    "corrected_intent": "add_task",
+    "normalized_phrase": "add a task",
+    "confidence": 0.9,
+    "category": "historical_success"
+  },
+  "add a note": {
+    "corrected_intent": "add_note",
+    "normalized_phrase": "add a note",
+    "confidence": 0.9,
+    "category": "historical_success"
+  }
+}

@@ -1,0 +1,188 @@
+.calendar-container {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-grid-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-weight: 800;
+    color: #4f46e5;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(75px, auto);
+    gap: 1px;
+    background: #e2e8f0;
+    border: 1px solid #e2e8f0;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.day-cell {
+    background: white;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center number for neat alignment */
+    justify-content: flex-start;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-weight: 600;
+    position: relative;
+    color: #334155;
+    min-height: 85px;
+    border: 0.5px solid #f1f5f9;
+}
+
+.day-cell:hover {
+    background: #f8fafc;
+    border-color: #4f46e5;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.day-cell.current-day {
+    background: #f8fafc;
+    border-color: #4f46e5;
+}
+
+.day-with-task {
+    position: relative;
+    background: white;
+}
+
+.day-with-task.task-overdue {
+    background: #fffafa;
+}
+
+.day-with-task.task-completed {
+    background: #f0fdf4;
+}
+
+.circle-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    margin-bottom: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.day-with-task .circle-number {
+    border: 2px solid #4f46e5;
+    color: #4f46e5;
+}
+
+.day-with-task.task-overdue .circle-number {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.current-day .circle-number {
+    background: #4f46e5;
+    color: white;
+    border: none;
+}
+
+/* In-Cell Task Labels */
+.task-chip {
+    width: 100%;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.task-chip.completed {
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.task-chip::before {
+    content: '';
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    border-radius: 50%;
+}
+
+.task-more {
+    font-size: 0.65rem;
+    color: #64748b;
+    margin-top: 2px;
+    font-weight: 700;
+}
+
+.day-cell.other-month {
+    opacity: 0.3;
+    cursor: default;
+}
+
+.event-dot {
+    width: 6px;
+    height: 6px;
+    background: #4f46e5;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+.current-day .event-dot {
+    background: white;
+}
+
+/* Day View Overlay */
+.day-view-overlay {
+    position: fixed;
+    top: 0; right: 0; bottom: 0; width: 450px;
+    background: white;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 3.5rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+.day-event-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.day-event-card h4 {
+    color: #4f46e5;
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+}
+
+.day-event-time {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+}

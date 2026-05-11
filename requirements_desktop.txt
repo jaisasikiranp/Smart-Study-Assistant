@@ -1,0 +1,11 @@
+PyQt6
+playwright
+playwright-stealth
+SpeechRecognition
+pyttsx3
+pandas
+sqlalchemy
+flask
+sounddevice
+soundfile
+numpy

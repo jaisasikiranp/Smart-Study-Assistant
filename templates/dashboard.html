@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Dashboard | Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='voice_assistant.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo">
+            <span style="font-size: 2rem;">🎓</span>
+            <div>
+                <p style="font-weight: 800; font-size: 1.25rem;">Study</p>
+                <p style="font-weight: 800; font-size: 1.25rem; margin-top: -0.25rem;">Assistant</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('dashboard.dashboard_view') }}" class="active"><span>⊞</span> Dashboard</a></li>
+            <li><a href="{{ url_for('tasks.list_tasks') }}"><span>📋</span> Tasks</a></li>
+            <li><a href="{{ url_for('notes.list_notes') }}"><span>🗒️</span> Notes</a></li>
+            <li><a href="{{ url_for('resources.list_resources') }}"><span>📚</span> Resources</a></li>
+            <li><a href="{{ url_for('courses.manager_view') }}"><span>📖</span> Courses</a></li>
+            <li><a href="{{ url_for('calendar.calendar_view') }}"><span>📅</span> Calendar</a></li>
+        </ul>
+        <div class="logout">
+            <a href="{{ url_for('auth.logout') }}" style="color: #94a3b8; font-weight: 600; text-decoration: none; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 1rem;"><span>🚪</span> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-dashboard">
+        <header class="dashboard-header">
+            <div class="welcome-section">
+                <h1>Welcome, {{ user.name }}</h1>
+                <p>It's a great day for learning! Today is {{ now.strftime('%B %d, %Y') }}</p>
+            </div>
+            <div class="pending-badge">
+                <span id="pendingCount">0</span> Pending Tasks
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <div class="stats-grid">
+            <!-- Today's Schedule -->
+            <article class="stat-card">
+                <div class="stat-card-header">
+                    <span style="color: #6366f1;">📅</span> Today's Schedule
+                </div>
+                <div class="stat-card-content" id="todaySchedule">
+                    <!-- Loaded via JS -->
+                    <div class="empty-state">No schedule for today.</div>
+                </div>
+            </article>
+
+            <!-- Pending Tasks -->
+            <article class="stat-card">
+                <div class="stat-card-header">
+                    <span style="color: #3b82f6;">🕒</span> Pending Tasks
+                </div>
+                <div class="stat-card-content" id="pendingTasksList">
+                    <!-- Loaded via JS -->
+                    <div class="empty-state">You're all caught up!</div>
+                </div>
+            </article>
+
+            <!-- Upcoming Deadlines -->
+            <article class="stat-card">
+                <div class="stat-card-header">
+                    <span style="color: #a855f7;">⚠️</span> Upcoming Deadlines
+                </div>
+                <div class="stat-card-content" id="upcomingDeadlines">
+                    <!-- Loaded via JS -->
+                    <div class="empty-state">No upcoming deadlines.</div>
+                </div>
+            </article>
+        </div>
+
+        <section class="quick-actions-section">
+            <h2><span style="color: #6366f1;">⚡</span> Quick Actions</h2>
+            <div class="quick-actions-grid">
+                <a href="{{ url_for('tasks.list_tasks') }}" class="action-btn">
+                    <span style="color: #64748b;">+</span>
+                    <label>Add Task</label>
+                </a>
+                <a href="{{ url_for('notes.list_notes') }}" class="action-btn">
+                    <span style="color: #64748b;">📝</span>
+                    <label>Add Note</label>
+                </a>
+                <a href="{{ url_for('resources.list_resources') }}" class="action-btn">
+                    <span style="color: #64748b;">🔗</span>
+                    <label>Add Resource</label>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='nav_highlighter.js') }}"></script>
+    <script src="{{ url_for('static', filename='notifications.js') }}"></script>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+    <script src="{{ url_for('static', filename='voice_assistant.js') }}"></script>
+</body>
+</html>

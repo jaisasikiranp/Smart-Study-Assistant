@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Resources | Study Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resources.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='voice_assistant.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="display: flex;">
+    <aside class="sidebar">
+        <div class="logo">
+            <span style="font-size: 2rem;">🎓</span>
+            <div>
+                <p style="font-weight: 800; font-size: 1.25rem;">Study</p>
+                <p style="font-weight: 800; font-size: 1.25rem; margin-top: -0.25rem;">Assistant</p>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="{{ url_for('dashboard.dashboard_view') }}"><span>⊞</span> Dashboard</a></li>
+            <li><a href="{{ url_for('tasks.list_tasks') }}"><span>📋</span> Tasks</a></li>
+            <li><a href="{{ url_for('notes.list_notes') }}"><span>🗒️</span> Notes</a></li>
+            <li><a href="{{ url_for('resources.list_resources') }}" class="active"><span>📚</span> Resources</a></li>
+            <li><a href="{{ url_for('courses.manager_view') }}"><span>📖</span> Courses</a></li>
+            <li><a href="{{ url_for('calendar.calendar_view') }}"><span>📅</span> Calendar</a></li>
+        </ul>
+        <div class="logout">
+            <a href="{{ url_for('auth.logout') }}" style="color: #94a3b8; font-weight: 600; text-decoration: none; padding: 0.75rem 1rem; display: flex; align-items: center; gap: 1rem;"><span>🚪</span> Logout</a>
+        </div>
+    </aside>
+
+    <main class="main-dashboard">
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3rem;">
+            <div>
+                <h1>Study Resources</h1>
+                <p class="subtitle" style="text-align: left; margin-bottom: 0;">Save your favorite learning links for easy access.</p>
+            </div>
+            <button onclick="document.getElementById('addResourceModal').style.display='flex'" class="btn" style="width: auto; padding: 0.75rem 1.5rem; margin-top:0;">+ Add Link</button>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" style="margin-bottom: 2rem;">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <section class="resources-grid">
+            {% for resource in resources %}
+            <article class="resource-card">
+                <span class="resource-category">{{ resource.category or "General" }}</span>
+                <h3>{{ resource.title }}</h3>
+                <span class="resource-url" title="{{ resource.url }}">{{ resource.url }}</span>
+                <footer class="resource-actions">
+                    <a href="{{ resource.url }}" target="_blank" class="btn-open">Open Link &rarr;</a>
+                    <form action="{{ url_for('resources.delete_resource', id=resource.id) }}" method="POST">
+                        <button type="submit" class="btn-delete-link" onclick="return confirm('Remove this link?')">Delete</button>
+                    </form>
+                </footer>
+            </article>
+            {% else %}
+            <div style="grid-column: 1/-1; text-align: center; padding: 4rem; background: rgba(255,255,255,0.05); border-radius: 1.5rem; color: var(--text-dim);">
+                <h2>Your library is empty.</h2>
+                <p>Start saving resources to help your study sessions.</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <!-- Modal to Add Resources -->
+    <div id="addResourceModal" class="modal-overlay">
+        <div class="modal-content">
+            <header style="display: flex; justify-content: space-between; margin-bottom: 2rem;">
+                <h2>Save Study Link</h2>
+                <button onclick="document.getElementById('addResourceModal').style.display='none'" style="background: none; border: none; color: white; cursor: pointer; font-size: 1.5rem;">&times;</button>
+            </header>
+            <form action="{{ url_for('resources.add_resource') }}" method="POST">
+                <div class="form-group">
+                    <label for="title">Resource Name</label>
+                    <input type="text" name="title" id="title" required placeholder="e.g., DSA Practice">
+                </div>
+                <div class="form-group">
+                    <label for="url">URL</label>
+                    <input type="text" name="url" id="url" required placeholder="e.g., geeksforgeeks.org">
+                </div>
+                <div class="form-group">
+                    <label for="category">Category</label>
+                    <input type="text" name="category" id="category" placeholder="e.g., Machine Learning">
+                </div>
+                <button type="submit" class="btn">Save Resource</button>
+            </form>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='nav_highlighter.js') }}"></script>
+    <script src="{{ url_for('static', filename='voice_assistant.js') }}"></script>
+</body>
+</html>

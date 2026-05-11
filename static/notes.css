@@ -1,0 +1,121 @@
+.notes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.search-box {
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color, #e2e8f0);
+    background: white;
+    color: var(--text-main);
+    width: 300px;
+}
+
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.note-card {
+    background: white;
+    border: 1px solid var(--border-color, #e2e8f0);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.note-card:hover {
+    transform: translateY(-8px) rotate(0.5deg);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--primary-color, #4f46e5);
+}
+
+.note-card h3 {
+    color: var(--primary-color, #4f46e5);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.note-card p {
+    color: var(--text-dim, #64748b);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.note-card p::-webkit-scrollbar {
+    width: 4px;
+}
+
+.note-card p::-webkit-scrollbar-thumb {
+    background: #e2e8f0;
+    border-radius: 2px;
+}
+
+.note-meta {
+    font-size: 0.75rem;
+    color: var(--text-dim, #64748b);
+    margin-bottom: 1.5rem;
+}
+
+.note-actions {
+    display: flex;
+    gap: 1.5rem;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    padding-top: 1rem;
+}
+
+.action-link, .delete-btn {
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.edit-link { color: #4f46e5; }
+.delete-btn { color: #ef4444; }
+
+/* Modal Light Style */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 { color: var(--text-main); margin-bottom: 1.5rem; }
+.form-group label { color: var(--text-dim); display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+}

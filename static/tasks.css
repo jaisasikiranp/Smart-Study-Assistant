@@ -1,0 +1,104 @@
+.tasks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.task-overdue {
+    border-left: 6px solid #f43f5e;
+    background: linear-gradient(to right, rgba(244, 63, 94, 0.05), transparent);
+}
+
+.status-overdue {
+    color: white !important;
+    background: #f43f5e;
+}
+
+.task-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color, #e2e8f0);
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.task-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.task-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.task-card p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.status-badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 0.625rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.5rem;
+    background: #f1f5f9;
+    color: #64748b;
+}
+
+.status-completed { color: #10b981 !important; background: #ecfdf5; }
+.status-urgent { color: #ef4444 !important; background: #fef2f2; }
+.status-pending { color: #64748b; }
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color, #e2e8f0);
+    padding-top: 1.5rem;
+}
+
+.deadline {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.task-urgent {
+    border-left: 4px solid #ef4444;
+}
+
+.task-completed {
+    opacity: 0.7;
+    background-color: #f8fafc;
+}
+
+.task-completed h3 {
+    text-decoration: line-through;
+}
+
+.btn-sm {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: var(--text-dim);
+    transition: all 0.2s;
+}
+
+.btn-complete { border-color: #10b981; color: #10b981; }
+.btn-complete:hover { background: #10b981; color: white; }
+.btn-delete { border-color: #ef4444; color: #ef4444; }
+.btn-delete:hover { background: #ef4444; color: white; }

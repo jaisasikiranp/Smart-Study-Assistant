@@ -1,0 +1,49 @@
+.courses-container {
+    max-width: 100%; /* Removing the 1100px limit to fill the screen as requested */
+    width: 100%;
+}
+
+/* Fluid Search Bar (Neater & Responds to Screen) */
+.search-bar-courses {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    border: 1.5px solid #e2e8f0;
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #1e293b;
+    box-shadow: none;
+    background: #ffffff;
+}
+
+.search-bar-courses:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Fluid Grid with Refined Small Cards */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding-right: 2rem; /* Buffer to prevent hitting the far edge */
+}
+
+.course-card {
+    background: white;
+    border-radius: 1.25rem;
+    border: 1px solid #f1f5f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+.pdf-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}

@@ -1,0 +1,178 @@
+test_id,spoken_input,recognized_text,mapped_intent,action_taken,retry_count,status,failure_stage,root_cause_category,final_output,expected_output,timestamp
+1,uploads/audio/inter_1a2b3c_try0.wav,calendar page,UNKNOWN,none,0,failure,intent_mapping,intent_mismatch,none,open_calendar,2026-04-29 10:00:00
+1,uploads/audio/inter_1a2b3c_try1.wav,it coordinated,calendar page,OPEN_CALENDAR,1,success,none,none,calendar_opened,open_calendar,2026-04-29 10:00:15
+2,uploads/audio/inter_4d5e6f_try0.wav,add task homework,add_task,Initiated add_task flow for 'homework',0,success,none,none,task_flow_started,add_task,2026-04-29 10:05:00
+3,uploads/audio/inter_7g8h9i_try0.wav,,none,none,0,failure,speech_recognition,unknown,none,list_tasks,2026-04-29 10:10:00
+3,uploads/audio/inter_7g8h9i_try1.wav,show goals,list_tasks,Listed 5 tasks,1,success,none,none,tasks_displayed,list_tasks,2026-04-29 10:10:20
+4,uploads/audio/inter_j0k1l2_try0.wav,open dashboard,nav,Opening your dashboard.,0,success,none,none,dashboard_opened,open_dashboard,2026-04-29 10:15:00
+5,uploads/audio/inter_m3n4o5_try0.wav,take note study tip,add_note,Initiated add_note flow for 'study tip',0,success,none,none,note_flow_started,add_note,2026-04-29 10:20:00
+6,uploads/audio/inter_p6q7r8_try0.wav,tomorrow,UNKNOWN,none,0,failure,intent_mapping,intent_mismatch,none,set_date,2026-04-29 10:25:00
+6,uploads/audio/inter_p6q7r8_try1.wav,set date tomorrow,add_task_step_date,Date set to 2026-04-30,1,success,none,none,date_set,set_date,2026-04-29 10:25:20
+7,uploads/audio/inter_s9t0u1_try0.wav,read schedule,today_schedule,Read today's schedule,0,success,none,none,schedule_read,read_schedule,2026-04-29 10:30:00
+8,uploads/audio/inter_v2w3x4_try0.wav,delete task,UNKNOWN,none,0,failure,intent_mapping,intent_mismatch,none,delete_task,2026-04-29 10:35:00
+9,uploads/audio/inter_y5z6a7_try0.wav,open resources,nav,Opening your resources.,0,success,none,none,resources_opened,open_resources,2026-04-29 10:40:00
+10,uploads/audio/inter_b8c9d0_try0.wav,help,help,Showed help message,0,success,none,none,help_displayed,show_help,2026-04-29 10:45:00
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:24:40
+9226982e,uploads\audio\inter_88689375_try0.wav,open tasks page,nav,Opening your tasks.,0,success,none,unknown,Opening your tasks.,unknown,2026-04-30 01:24:50
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:26:36
+11143135,uploads\audio\inter_67b5746e_try0.wav,open notes page,nav,Opening your notes.,0,success,none,unknown,Opening your notes.,unknown,2026-04-30 01:26:45
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:27:48
+faeb276b,uploads\audio\inter_6d34f354_try0.wav,open Note,nav,Opening your notes.,0,success,none,unknown,Opening your notes.,unknown,2026-04-30 01:27:56
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:28:04
+10698c92,uploads\audio\inter_62baf106_try0.wav,today's schedule,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 01:28:12
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:28:23
+f4bb49ae,uploads\audio\inter_5af44304_try0.wav,today schedule,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 01:28:32
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:28:42
+663482c6,uploads\audio\inter_26eafb18_try0.wav,what is today's schedule,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 01:28:50
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:29:02
+807d5344,uploads\audio\inter_88ed711c_try0.wav,what's today's schedule,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 01:29:12
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 01:29:22
+30eb7fa1,uploads\audio\inter_9d328d9a_try0.wav,what are the pending tasks,list_tasks,Listed 8 tasks,0,success,none,unknown,Listed 8 tasks,unknown,2026-04-30 01:29:31
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 16:14:34
+e3b17568,uploads\audio\inter_cdc5a100_try0.wav,schedule,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:14:41
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 16:14:51
+f9007ab9,uploads\audio\inter_e96aa41d_try0.wav,what's today's schedule,today_schedule,Read empty schedule,0,success,none,unknown,Read empty schedule,unknown,2026-04-30 16:15:00
+d59feddb,background_capture,alexa,wake_word,Activated listener immediately,0,success,none,none,none,none,2026-04-30 16:21:50
+cfe61be0,uploads\audio\inter_f6ac3a29_try0.wav,show today schedule,today_schedule,Read empty schedule,0,success,none,unknown,Read empty schedule,unknown,2026-04-30 16:21:58
+be7c44fd,background_capture,alexa,wake_word,Activated listener immediately with prompt,0,success,none,none,none,none,2026-04-30 16:26:34
+da9caed3,uploads\audio\inter_5bdc7790_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:26:45
+da9caed3,uploads\audio\inter_e32fe183_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:26:49
+da9caed3,uploads\audio\inter_9f326ef5_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:26:58
+da9caed3,uploads\audio\inter_37424027_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:27:04
+da9caed3,uploads\audio\inter_6cc59d56_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:27:10
+da9caed3,uploads\audio\inter_a658ea0b_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:27:14
+da9caed3,None,,none,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:27:30
+07ef5abb,background_capture,alexa,wake_word,Activated listener immediately with prompt,0,success,none,none,none,none,2026-04-30 16:27:40
+717c7520,uploads\audio\inter_10194070_try0.wav,open,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:27:46
+3f6df0d2,background_capture,alexa,wake_word,Activated listener immediately with prompt,0,success,none,none,none,none,2026-04-30 16:27:56
+08a20998,uploads\audio\inter_c8d5fa43_try0.wav,calendar,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:28:03
+41ca5410,background_capture,alexa,wake_word,Activated listener immediately with prompt,0,success,none,none,none,none,2026-04-30 16:28:27
+f0b60477,uploads\audio\inter_52d6f2e4_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:28:32
+09f0adbf,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:34:52
+23e0228f,uploads\audio\inter_a793247b_try0.wav,open calendar,nav,Opening your calendar.,0,success,none,unknown,Opening your calendar.,unknown,2026-04-30 16:34:59
+5c3c9480,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:35:06
+ca00a63b,uploads\audio\inter_1d31d902_try0.wav,open dashboard,nav,Opening your dashboard.,0,success,none,unknown,Opening your dashboard.,unknown,2026-04-30 16:35:13
+234610a5,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:35:21
+7fc3a300,uploads\audio\inter_78f64cf3_try0.wav,open please,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:35:28
+991df441,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:35:42
+eb585777,uploads\audio\inter_a0bcfad5_try0.wav,open Facebook,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:35:49
+d04664b7,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:36:18
+27e91fb3,uploads\audio\inter_f0c2fef7_try0.wav,open tasks page,nav,Opening your tasks.,0,success,none,unknown,Opening your tasks.,unknown,2026-04-30 16:36:27
+1f19b8de,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:36:47
+b3f1a528,uploads\audio\inter_bb887b4d_try0.wav,heartspace,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:36:55
+1010fffa,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:37:13
+7e786e6a,uploads\audio\inter_a703fa8a_try0.wav,open notes page,nav,Opening your notes.,0,success,none,unknown,Opening your notes.,unknown,2026-04-30 16:37:21
+2b32ef6a,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:37:30
+4fded23f,uploads\audio\inter_1197d609_try0.wav,open,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:37:45
+f147a1f5,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:38:11
+6d6a2586,uploads\audio\inter_0a8df7c0_try0.wav,open resources page,nav,Opening your resources.,0,success,none,unknown,Opening your resources.,unknown,2026-04-30 16:38:19
+2c24552c,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:38:31
+ce181807,uploads\audio\inter_e6b56e09_try0.wav,horses,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:38:40
+98329a38,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:46:11
+c10e1284,uploads\audio\inter_fe4d1ebd_try0.wav,open calendar,nav,Opening your calendar.,0,success,none,unknown,Opening your calendar.,unknown,2026-04-30 16:46:20
+d26bf766,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:46:29
+6b59bb0e,uploads\audio\inter_e84f3641_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:46:35
+6b59bb0e,uploads\audio\inter_7a4657e6_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:46:39
+6b59bb0e,uploads\audio\inter_6fd59453_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:46:45
+6b59bb0e,uploads\audio\inter_27403737_try2.wav,schedule,unknown,Failed to map intent,2,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 16:46:53
+c4a2d87d,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:47:14
+daf961f0,uploads\audio\inter_8da1f940_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:47:21
+06ddd2ff,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:48:39
+00392750,uploads\audio\inter_02d25dec_try0.wav,what is today's schedule,today_schedule,Read empty schedule,0,success,none,unknown,Read empty schedule,unknown,2026-04-30 16:48:45
+78395e64,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:49:04
+8367add2,none,,none,Retry prompted: No audio detected,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:49:16
+8367add2,none,,none,Retry prompted: No audio detected,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 16:49:28
+8367add2,None,,none,none,2,failure,speech_recognition,none,none,none,2026-04-30 16:49:41
+5920d489,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:49:57
+2b5b6c42,uploads\audio\inter_914018ee_try0.wav,what are the pending tasks,list_tasks,Listed 8 tasks,0,success,none,unknown,Listed 8 tasks,unknown,2026-04-30 16:50:04
+f379d3b9,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 16:50:41
+638e6d9d,uploads\audio\inter_3b4e2a00_try0.wav,what are the upcoming deadlines,upcoming_tasks,Read upcoming deadlines,0,success,none,unknown,Read upcoming deadlines,unknown,2026-04-30 16:50:48
+none,text_input,what are the upcoming deadlines,upcoming_tasks,Read upcoming deadlines,0,success,none,none,none,none,2026-04-30 16:54:21
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 17:02:39
+4bfdd7c5,uploads\audio\inter_cf4655cc_try0.wav,what are the pending tasks,list_tasks,Listed 8 tasks,0,success,none,unknown,Listed 8 tasks,unknown,2026-04-30 17:02:49
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 17:03:06
+0abdd660,uploads\audio\inter_79577d40_try0.wav,what are the upcoming deadlines,upcoming_tasks,Read upcoming deadlines,0,success,none,unknown,Read upcoming deadlines,unknown,2026-04-30 17:03:16
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:24:18
+b1ef2194,uploads\audio\inter_0f8befea_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 17:24:24
+b1ef2194,uploads\audio\inter_aa4c4c49_try1.wav,today schedule,today_schedule,Read empty schedule,1,success,none,unknown,Read empty schedule,unknown,2026-04-30 17:24:32
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:24:42
+1bc3e99a,uploads\audio\inter_92a14fe2_try0.wav,what are the upcoming deadlines,upcoming_tasks,Read upcoming deadlines,0,success,none,unknown,Read upcoming deadlines,unknown,2026-04-30 17:24:52
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:25:06
+49013e19,uploads\audio\inter_4be9edfc_try0.wav,pending tasks,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:25:14
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:25:24
+72d627fa,uploads\audio\inter_afd24c3a_try0.wav,show today's schedule,today_schedule,Read empty schedule,0,success,none,unknown,Read empty schedule,unknown,2026-04-30 17:25:35
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:25:43
+391fe9dd,uploads\audio\inter_3f9625fb_try0.wav,show pending masks,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:25:53
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:26:04
+1bf9fd7d,uploads\audio\inter_e2791ea9_try0.wav,show pending tasks,list_tasks,Listed 8 tasks,0,success,none,unknown,Listed 8 tasks,unknown,2026-04-30 17:26:13
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:26:33
+cb625fb8,uploads\audio\inter_4fb0cffd_try0.wav,a task,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:26:41
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:26:51
+79c4bb19,uploads\audio\inter_dd83823c_try0.wav,add a task,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:27:00
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:31:07
+702f201c,uploads\audio\inter_7166a0f7_try0.wav,add a task,add_task,Initiated add_task flow (title),0,success,none,unknown,Initiated add_task flow (title),unknown,2026-04-30 17:31:14
+d4f5ab3b,uploads\audio\inter_d63dde2b_try0.wav,playing cricket,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:31:23
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:31:34
+0d28e72c,uploads\audio\inter_79fa2c76_try0.wav,add a task,add_task,Initiated add_task flow (title),0,success,none,unknown,Initiated add_task flow (title),unknown,2026-04-30 17:31:41
+53c45e2c,uploads\audio\inter_67212a9e_try0.wav,movie ticket booking,complete_task,Completed task 'ticket booking',0,success,none,unknown,Completed task 'ticket booking',unknown,2026-04-30 17:31:52
+none,background_capture,alexa,wake_word,Activated listener immediately with short prompt,0,success,none,none,none,none,2026-04-30 17:32:57
+8765e5b9,uploads\audio\inter_c3b49a19_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 17:33:04
+8765e5b9,uploads\audio\inter_c53b406d_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 17:33:07
+8765e5b9,uploads\audio\inter_63744f96_try2.wav,task,unknown,Failed to map intent,2,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:33:17
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 17:50:10
+07fd8f63,uploads\audio\inter_358aba31_try0.wav,add a task,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-04-30 17:50:18
+none,text_input,add a task,unknown,Failed to map intent,0,failure,none,none,none,none,2026-04-30 17:53:51
+none,text_input,add a note,unknown,Failed to map intent,0,failure,none,none,none,none,2026-04-30 17:53:58
+none,text_input,add a task,unknown,Failed to map intent,0,failure,none,none,none,none,2026-04-30 18:07:23
+none,text_input,add a task,add_task,Initiated add_task flow (title),0,success,none,none,none,none,2026-04-30 18:09:34
+none,text_input,cinema ticket booking,complete_task,Failure: No task match for 'et booking',0,success,none,none,none,none,2026-04-30 18:09:47
+9d8d3097,none,,none,Retry prompted: No audio detected,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:09:49
+9d8d3097,uploads\audio\inter_85b4a9dd_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:09:52
+9d8d3097,uploads\audio\inter_717dda7f_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 18:09:57
+9d8d3097,uploads\audio\inter_3b4dfc8a_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 18:10:01
+none,text_input,add a note,add_note,Initiated add_note flow (title),0,success,none,none,none,none,2026-04-30 18:10:05
+9d8d3097,None,,none,none,2,failure,speech_recognition,none,none,none,2026-04-30 18:10:13
+none,text_input,calories list,unknown,Failed to map intent,0,failure,none,none,none,none,2026-04-30 18:10:21
+72120eba,uploads\audio\inter_28f22f8a_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:10:22
+72120eba,uploads\audio\inter_69f24ea2_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:10:25
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-04-30 18:22:23
+a01ae023,uploads\audio\inter_921664b4_try0.wav,add a task,add_task,Initiated add_task flow (title),0,success,none,unknown,Initiated add_task flow (title),unknown,2026-04-30 18:22:31
+none,flow_input,cat booking,add_task_step_title,Set task title to cat booking,0,success,none,none,none,none,2026-04-30 18:22:40
+none,flow_input,May 10th,add_task_step_date,Set task date to may 10th,0,success,none,none,none,none,2026-04-30 18:22:56
+none,flow_input,2:00 p.m.,add_task_step_time,Unknown flow step,0,success,none,none,none,none,2026-04-30 18:23:11
+none,text_input,add a note,add_note,Initiated add_note flow (title),0,success,none,none,none,none,2026-04-30 18:28:10
+none,flow_input,shopping list,add_note_step_title,Unknown flow step,0,success,none,none,none,none,2026-04-30 18:28:20
+39d6571f,uploads\audio\inter_891b0868_try0.wav,,none,Retry prompted: UnknownValue,0,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:28:23
+39d6571f,uploads\audio\inter_0aa3f1a7_try1.wav,,none,Retry prompted: UnknownValue,1,failure,speech_recognition,unknown,none,unknown,2026-04-30 18:28:27
+39d6571f,uploads\audio\inter_ce36ccbc_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 18:28:30
+39d6571f,uploads\audio\inter_f59826e0_try2.wav,,unknown,none,2,failure,speech_recognition,none,none,none,2026-04-30 18:28:35
+none,text_input,open calendar,,Executed None,0,success,none,none,none,none,2026-05-07 16:54:16
+none,text_input,open calendar,nav,Opening your calendar.,0,success,none,none,none,none,2026-05-07 17:02:11
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:33:37
+2eaa4317,uploads\audio\inter_fe3715c2_try0.wav,open dashboard,nav,Opening your dashboard.,0,success,none,unknown,Opening your dashboard.,unknown,2026-05-07 17:33:47
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:33:53
+1664facf,uploads\audio\inter_49deac33_try0.wav,idea task,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-05-07 17:34:05
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:34:26
+91bd4afc,uploads\audio\inter_9f4e709d_try0.wav,Paddy attack,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-05-07 17:34:35
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:34:48
+c35359ba,uploads\audio\inter_8d1c3c1b_try0.wav,add a task,add_task,Initiated add_task flow (title),0,success,none,unknown,Initiated add_task flow (title),unknown,2026-05-07 17:34:57
+none,flow_input,project presentation,add_task_step_title,Set task title to project presentation,0,success,none,none,none,none,2026-05-07 17:35:06
+none,flow_input,may 15th,add_task_step_date,Set task date to may 15th,0,success,none,none,none,none,2026-05-07 17:35:23
+none,flow_input,1:00 p.m.,add_task_step_time,Created task: project presentation for may 15th 1:00 p.m.,0,success,none,none,none,none,2026-05-07 17:35:39
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:35:52
+631c8c57,uploads\audio\inter_7df70425_try0.wav,add a note,add_note,Initiated add_note flow (title),0,success,none,unknown,Initiated add_note flow (title),unknown,2026-05-07 17:36:01
+none,flow_input,shopping list,add_note_step_title,Set note title to shopping list,0,success,none,none,none,none,2026-05-07 17:36:10
+none,flow_input,jacket t-shirts shoe,add_note_step_content,Saved note: shopping list,0,success,none,none,none,none,2026-05-07 17:36:24
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:36:46
+f2b75d59,uploads\audio\inter_31604200_try0.wav,Friday resource,unknown,Failed to map intent,0,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-05-07 17:36:56
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:43:21
+33f66ba2,uploads\audio\inter_d6d8d1f8_try0.wav,open calendar,nav,Opening your calendar.,0,success,none,unknown,Opening your calendar.,unknown,2026-05-07 17:43:31
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:43:58
+c47f92ef,uploads\audio\inter_7063fa4c_try0.wav,what is today's schedule,today_schedule,Read empty schedule,0,success,none,unknown,Read empty schedule,unknown,2026-05-07 17:44:07
+none,background_capture,hey alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:44:19
+b6adcffe,uploads\audio\inter_e4754e01_try0.wav,what are the upcoming deadlines,upcoming_tasks,Read upcoming deadlines,0,success,none,unknown,Read upcoming deadlines,unknown,2026-05-07 17:44:29
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:44:46
+44201ef2,uploads\audio\inter_4b12a6f4_try0.wav,what are the pending tasks,list_tasks,Listed 2 tasks,0,success,none,unknown,Listed 2 tasks,unknown,2026-05-07 17:44:55
+none,background_capture,alexa,wake_word,Activated listener,0,success,none,none,none,none,2026-05-07 17:45:49
+fa9f3f22,none,,none,Retry prompted: No audio detected,0,failure,speech_recognition,unknown,none,unknown,2026-05-07 17:46:03
+fa9f3f22,uploads\audio\inter_08bbc031_try1.wav,10 resources page,unknown,Failed to map intent,1,failure,intent_mapping,unknown,Failed to map intent,unknown,2026-05-07 17:46:14
